@@ -7,9 +7,6 @@ def q1
   # 以下に回答を記載
   names.push "斎藤"
   puts names
-  names.each do |name|
-    puts name
-  end
 
 
 end
@@ -30,7 +27,7 @@ def q3
 
   # 以下に回答を記載
   puts numbers.count(3)
-  puts numbers.count(1)
+
 
 end
 
