@@ -125,8 +125,7 @@ def q12
   data = { user: { name: "satou", age: 33 } }
 
   # 以下に回答を記載
-  invert_data = data.invert
-  p invert_data[:name]
+  p data[:user][:name]
 
 end
 
