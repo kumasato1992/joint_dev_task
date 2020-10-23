@@ -101,6 +101,11 @@ def q10
   foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
 
   # 以下に回答を記載
+  if foods.map{&:include?("うに")}
+    p "好物です"
+  elsif
+    p "まぁまぁ好きです"
+  end
 
 
 
