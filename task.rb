@@ -192,10 +192,11 @@ class UserQ17
   end
 
   def info
-
-    p "名前：#{@name}"
-    p "年齢：#{@age}"
-    p "性別：#{@gender}"
+    p <<~TEXT
+      名前：#{@name}
+      年齢：#{@age}
+      性別：#{@gender}
+      TEXT
 
   end
 
@@ -257,7 +258,7 @@ class UserQ20
 
   attr_reader :name, :age
 
-  def initialize(params)
+  def initialize(**params)
     @name = params[:name]
     @age = params[:age]
   end
@@ -268,22 +269,23 @@ class Zoo
   # 以下に回答を記載
   attr_reader :name, :entry_fee
 
-  def initialize(params)
+  def initialize(**params)
     @name = params[:name]
     @entry_fee = params[:entry_fee]
   end
 
   def info_entry_fee(user)
-    case user.age
+    entry_fee = case user.age
     when 0..5
-      p "#{user.name}さんの入場料金は#{@entry_fee[:infant]}円です"
+      @entry_fee[:infant]
     when 6..12
-      p "#{user.name}さんの入場料金は#{@entry_fee[:children]}円です"
+      @entry_fee[:children]
     when 13..64
-      p "#{user.name}さんの入場料金は#{@entry_fee[:adult]}円です"
+      @entry_fee[:adult]
     when 65..120
-      p "#{user.name}さんの入場料金は#{@entry_fee[:senior]}円です"
+      @entry_fee[:senior]
     end
+    p "#{user.name}さんの入場料は#{entry_fee}円です。"
   end
 
 end
